@@ -7,7 +7,7 @@ decisión, no una investigación.**
 
 Antena detecta el hardware, identifica el chipset, explica qué falta y ejecuta
 un plan de instalación con pasos reales y verificados. La interfaz se ejecuta
-sin privilegios; solo un componente pequeño y auditables solicita autorización
+sin privilegios; solo un componente pequeño y auditable solicita autorización
 a través de polkit.
 
 > Estado: **0.1.0**, primera versión pública. Una receta de controlador está
