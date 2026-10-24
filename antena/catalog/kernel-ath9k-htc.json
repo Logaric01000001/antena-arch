@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "kernel-ath9k-htc",
+  "name": "Atheros AR9271",
+  "vendor": "Qualcomm Atheros",
+  "family": "AR9271",
+  "summary_key": "recipe.kernel_ath9k.summary",
+  "match": {
+    "usb_ids": ["0cf3:9271"],
+    "manufacturers": ["ATHEROS", "Atheros"],
+    "products": ["AR9271"],
+    "drivers": ["ath9k_htc"]
+  },
+  "usb_stages": {
+    "operational": ["0cf3:9271"]
+  },
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["ath9k_htc"],
+    "primary_module": "ath9k_htc",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware/ath9k_htc"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["ath9k_htc"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "monitor_mode", "packet_injection"],
+    "driver_advertised": ["managed", "ap", "monitor", "mesh_point"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/ath9k_htc"]
+}

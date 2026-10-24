@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.antena.Antena</id>
+  <name>Antena</name>
+  <summary>Set up USB Wi-Fi adapters on Arch Linux</summary>
+  <summary xml:lang="es">Configura adaptadores Wi-Fi USB en Arch Linux</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="io.github.antena">
+    <name>Antena contributors</name>
+  </developer>
+  <description>
+    <p>
+      Antena detects Wi-Fi adapters, identifies their chipset and guides you
+      through the driver setup with real, verified steps.
+    </p>
+    <p xml:lang="es">
+      Antena detecta adaptadores Wi-Fi, identifica su chipset y te guía por la
+      configuración del controlador con pasos reales y verificados.
+    </p>
+    <ul>
+      <li>Read-only hardware detection from sysfs, udev and NetworkManager</li>
+      <li>Verified AIC8800D80 recipe with a pinned, hash-checked driver source</li>
+      <li>Privileged operations isolated behind polkit</li>
+      <li>No accounts, ads or telemetry</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.antena.Antena.desktop</launchable>
+  <url type="homepage">https://github.com/USUARIO/antena-arch</url>
+  <url type="bugtracker">https://github.com/USUARIO/antena-arch/issues</url>
+  <categories>
+    <category>Network</category>
+    <category>Settings</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-10-24">
+      <description>
+        <p>First release: AIC8800D80 support and universal read-only detection.</p>
+        <p xml:lang="es">Primera versión: soporte AIC8800D80 y detección universal en modo lectura.</p>
+      </description>
+    </release>
+  </releases>
+  <provides>
+    <binary>antena</binary>
+  </provides>
+</component>

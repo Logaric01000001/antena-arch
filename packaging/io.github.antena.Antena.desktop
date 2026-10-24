@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Antena
+GenericName=Wi-Fi Adapter Setup
+GenericName[es]=Configuración de adaptadores Wi-Fi
+Comment=Set up USB Wi-Fi adapters with verified drivers and real checks
+Comment[es]=Configura adaptadores Wi-Fi USB con controladores verificados y comprobaciones reales
+Exec=antena
+Icon=io.github.antena.Antena
+Terminal=false
+Categories=Network;
+Keywords=wifi;wireless;driver;antenna;usb;network;
+Keywords[es]=wifi;inalambrico;controlador;antena;usb;red;
+StartupNotify=true
+StartupWMClass=io.github.antena.Antena

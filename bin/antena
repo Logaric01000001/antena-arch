@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lanzador de Antena. La interfaz nunca se ejecuta como root.
+set -eu
+cd /
+PYTHONPATH="/usr/lib/antena${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH
+# -P evita que el directorio actual se anteponga al PYTHONPATH.
+exec /usr/bin/python3 -P -m antena "$@"

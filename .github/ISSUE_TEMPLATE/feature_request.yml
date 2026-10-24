@@ -1,0 +1,52 @@
+name: Feature request
+description: Propón una mejora o un adaptador nuevo
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Para un adaptador nuevo, lee antes docs/ADDING_DEVICES.md. Sin evidencia
+        de hardware no se acepta una receta como verificada.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Qué situación quieres resolver
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+      description: Cómo debería comportarse Antena
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Ámbito
+      options:
+        - Interfaz
+        - Detección
+        - Catálogo / driver
+        - Diagnóstico
+        - Empaquetado
+        - Documentación
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia de hardware (si aplica)
+      description: Modelo, VID:PID, chipset, kernel, resultados reales y fuente del driver
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: La propuesta no incluye ataques, inyección o captura de credenciales
+          required: true
+        - label: No incluyo datos personales ni secretos
+          required: true

@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "kernel-rtl8xxxu",
+  "name": "Realtek RTL8188EU / RTL8192EU",
+  "vendor": "Realtek",
+  "family": "RTL8XXXU",
+  "summary_key": "recipe.kernel_rtl8xxxu.summary",
+  "match": {
+    "usb_ids": ["0bda:8179", "0bda:818b", "0bda:818c"],
+    "manufacturers": ["Realtek", "REALTEK"],
+    "products": ["802.11n NIC", "RTL8188EU", "RTL8192EU"],
+    "drivers": ["rtl8xxxu"]
+  },
+  "usb_stages": {
+    "operational": ["0bda:8179", "0bda:818b", "0bda:818c"]
+  },
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["rtl8xxxu", "rtl_usb", "rtl8188eufw"],
+    "primary_module": "rtl8xxxu",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware/rtlwifi"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["rtl8xxxu"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "monitor_mode"],
+    "driver_advertised": ["managed", "monitor"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/rtl8xxxu"]
+}

@@ -1,0 +1,9 @@
+#!/bin/sh
+# Fixed USB mode switch for the AIC8800D80 storage stage.
+# Installed by Antena, invoked by a udev rule with no arguments.
+# Do not edit: the messages are hardware-specific and pinned here on purpose.
+[ -x /usr/bin/usb_modeswitch ] || exit 0
+sleep 1
+exec /usr/bin/usb_modeswitch -v 1111 -p 1111 \
+  -M "555342438765432100000000000010fd0000000000000000000000000000f3" \
+  -2 "555342438765432100000000000010fd0000000000000000000000000000f2"

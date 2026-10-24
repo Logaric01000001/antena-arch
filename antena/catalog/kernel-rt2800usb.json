@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "kernel-rt2800usb",
+  "name": "Ralink RT5370",
+  "vendor": "Ralink / MediaTek",
+  "family": "RT2800",
+  "summary_key": "recipe.kernel_rt2800.summary",
+  "match": {
+    "usb_ids": ["148f:5370"],
+    "manufacturers": ["Ralink", "RALINK"],
+    "products": ["802.11 n WLAN", "RT5370"],
+    "drivers": ["rt2800usb"]
+  },
+  "usb_stages": {
+    "operational": ["148f:5370"]
+  },
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["rt2800usb", "rt2x00usb", "rt2x00lib"],
+    "primary_module": "rt2800usb",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["rt2800usb", "rt2x00usb", "rt2x00lib"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "monitor_mode", "packet_injection"],
+    "driver_advertised": ["managed", "ap", "monitor", "mesh_point"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/rt2800usb"]
+}

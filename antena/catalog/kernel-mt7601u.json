@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "kernel-mt7601u",
+  "name": "MediaTek MT7601U",
+  "vendor": "MediaTek",
+  "family": "MT7601U",
+  "summary_key": "recipe.kernel_mt7601.summary",
+  "match": {
+    "usb_ids": ["0e8d:7601"],
+    "manufacturers": ["MediaTek", "MEDIATEK"],
+    "products": ["MT7601U", "802.11 n WLAN"],
+    "drivers": ["mt7601u"]
+  },
+  "usb_stages": {
+    "operational": ["0e8d:7601"]
+  },
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["mt7601u"],
+    "primary_module": "mt7601u",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware/mt7601u.bin"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["mt7601u"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "monitor_mode", "packet_injection"],
+    "driver_advertised": ["managed", "ap", "monitor"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/mt7601u"]
+}

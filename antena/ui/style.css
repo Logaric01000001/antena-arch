@@ -1,0 +1,180 @@
+/* Antena — sistema visual sobrio, sin decoración innecesaria. */
+
+/* Acento propio: ámbar de señal. Sustituye el azul genérico del sistema
+   únicamente dentro de Antena. */
+@define-color accent_bg_color #b36b1f;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color #d99a3e;
+
+.antena-window {
+  background-color: @window_bg_color;
+}
+
+.sidebar {
+  background-color: alpha(@window_fg_color, 0.035);
+  border-right: 1px solid alpha(@window_fg_color, 0.08);
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: 0.14em;
+}
+
+.brand-sub {
+  font-size: 0.76rem;
+  color: alpha(@window_fg_color, 0.52);
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #d99a3e;
+}
+
+.display {
+  font-size: 1.92rem;
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.page-sub {
+  font-size: 0.98rem;
+  color: alpha(@window_fg_color, 0.68);
+  line-height: 1.45;
+}
+
+.muted {
+  color: alpha(@window_fg_color, 0.58);
+}
+
+.tiny {
+  font-size: 0.76rem;
+}
+
+.mono {
+  font-family: "JetBrains Mono", "Source Code Pro", "DejaVu Sans Mono", monospace;
+  font-size: 0.82rem;
+}
+
+.nav-row {
+  border-radius: 9px;
+  padding: 7px 10px;
+  margin: 1px 0;
+}
+
+.nav-row:selected {
+  background-color: alpha(@accent_bg_color, 0.16);
+}
+
+.device-row {
+  padding: 13px 4px;
+  border-radius: 9px;
+}
+
+.device-row:hover {
+  background-color: alpha(@window_fg_color, 0.045);
+}
+
+.device-row-compact {
+  padding: 7px 8px;
+  border-radius: 8px;
+}
+
+.device-row-compact:hover {
+  background-color: alpha(@window_fg_color, 0.06);
+}
+
+.hairline {
+  background-color: alpha(@window_fg_color, 0.1);
+  min-height: 1px;
+}
+
+.status-dot {
+  min-width: 9px;
+  min-height: 9px;
+  border-radius: 99px;
+  margin-top: 1px;
+}
+
+.dot-ready { background-color: @success_color; }
+.dot-setup { background-color: @warning_color; }
+.dot-attention { background-color: @warning_color; }
+.dot-unsupported { background-color: alpha(@window_fg_color, 0.45); }
+
+.status-pill {
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.pill-ready { background-color: alpha(@success_color, 0.16); color: @success_color; }
+.pill-setup { background-color: alpha(@warning_color, 0.18); color: @warning_color; }
+.pill-attention { background-color: alpha(@warning_color, 0.18); color: @warning_color; }
+.pill-unsupported { background-color: alpha(@window_fg_color, 0.1); color: alpha(@window_fg_color, 0.62); }
+
+.banner {
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.banner-ok { background-color: alpha(@success_color, 0.13); }
+.banner-error { background-color: alpha(@error_color, 0.13); }
+.banner-warn { background-color: alpha(@warning_color, 0.13); }
+
+.tech-panel {
+  border-radius: 10px;
+  padding: 14px;
+  background-color: alpha(@window_fg_color, 0.035);
+}
+
+.stage-row {
+  padding: 7px 2px;
+}
+
+.check-row {
+  padding: 10px 2px;
+}
+
+.chip {
+  border-radius: 99px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  background-color: alpha(@window_fg_color, 0.07);
+}
+
+.chip-ok { background-color: alpha(@success_color, 0.15); color: @success_color; }
+.chip-warn { background-color: alpha(@warning_color, 0.16); color: @warning_color; }
+
+.sidebar-section {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: alpha(@window_fg_color, 0.42);
+}
+
+.status-icon-ok { color: @success_color; }
+.status-icon-warn { color: @warning_color; }
+.status-icon-error { color: @error_color; }
+.status-icon-unknown { color: alpha(@window_fg_color, 0.45); }
+
+.button-quiet {
+  padding: 4px 8px;
+}
+
+.toast {
+  font-size: 0.9rem;
+}
+
+.logo-frame {
+  border-radius: 18px;
+  background-color: #1b1a18;
+  padding: 10px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+}

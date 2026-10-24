@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar pytest
+        run: python -m pip install --upgrade pytest
+
+      - name: Pruebas del núcleo
+        run: python -m pytest -q
+
+      - name: Comprobar sintaxis
+        run: python -m compileall -q antena
+
+      - name: Validar scripts de shell
+        run: |
+          bash -n install.sh
+          bash -n antena-arch.install
+          for script in bin/antena bin/antena-helper antena/bin/antena-modeswitch-aic8800d80; do
+            bash -n "$script"
+          done
+
+      - name: Instalar validadores de escritorio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y desktop-file-utils appstream
+
+      - name: Validar .desktop
+        run: desktop-file-validate packaging/io.github.antena.Antena.desktop
+
+      - name: Validar AppStream
+        run: appstreamcli validate --no-net packaging/io.github.antena.Antena.metainfo.xml
+
+      - name: Validar catálogo
+        run: |
+          python - <<'PY'
+          from antena.core.catalog import load_recipes
+          recipes = load_recipes()
+          assert any(recipe.id == "aic8800d80" for recipe in recipes)
+          print(f"{len(recipes)} recetas válidas")
+          PY

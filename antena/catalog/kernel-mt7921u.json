@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "kernel-mt7921u",
+  "name": "MediaTek MT7921AU",
+  "vendor": "MediaTek",
+  "family": "MT7921",
+  "summary_key": "recipe.kernel_mt7921.summary",
+  "match": {
+    "usb_ids": ["0e8d:7961"],
+    "manufacturers": ["MediaTek", "MEDIATEK"],
+    "products": ["MT7921", "Wireless_Device"],
+    "drivers": ["mt7921u", "mt792x_usb"]
+  },
+  "usb_stages": {
+    "operational": ["0e8d:7961"]
+  },
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["mt7921u", "mt792x_usb", "mt792x_lib", "mt76_usb", "mt76"],
+    "primary_module": "mt7921u",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware/mediatek"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["mt7921u"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "scan_5ghz", "monitor_mode", "packet_injection"],
+    "driver_advertised": ["managed", "ap", "monitor", "p2p"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/mt76"]
+}

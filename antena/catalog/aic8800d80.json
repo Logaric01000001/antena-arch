@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "id": "aic8800d80",
+  "name": "AIC8800D80",
+  "vendor": "AIC Semiconductor",
+  "family": "AIC8800 (AX900)",
+  "summary_key": "recipe.aic8800d80.summary",
+  "match": {
+    "usb_ids": ["1111:1111", "a69c:8d80", "a69c:8d83"],
+    "manufacturers": ["AIC", "AICSemi", "aicsemi"],
+    "products": ["88M80", "AIC 8800D80", "AIC Wlan"],
+    "storage_ids": ["1111:1111"],
+    "drivers": ["aic8800_fdrv"]
+  },
+  "usb_stages": {
+    "storage": ["1111:1111"],
+    "transitional": ["a69c:8d80"],
+    "operational": ["a69c:8d83"]
+  },
+  "driver": {
+    "kind": "dkms",
+    "package": "aic8800-fdrv-dkms",
+    "dkms_package": "aic8800-fdrv-dkms",
+    "version": "6.4.3.0",
+    "modules": ["aic_load_fw", "aic8800_fdrv"],
+    "primary_module": "aic8800_fdrv",
+    "license": "GPL-2.0-only",
+    "upstream": "https://github.com/ronnyf/AIC8800-Linux-Driver",
+    "source_url": "https://github.com/ronnyf/AIC8800-Linux-Driver/releases/download/v6.4.3.0-8/AIC8800-Linux-Driver-6.4.3.0-8.tar.gz",
+    "source_sha256": "fbb3d8e912a9ce80847bd26c5615337d1f968c9297f7e28ae7209c7519772b28",
+    "source_size": 1305156,
+    "source_version": "6.4.3.0",
+    "source_pkgrel": 8,
+    "source_root": "AIC8800-Linux-Driver-6.4.3.0-8",
+    "dkms_files": [
+      "drivers/aic8800/Makefile",
+      "drivers/aic8800/Kconfig",
+      "drivers/aic8800/aic_load_fw",
+      "drivers/aic8800/aic8800_fdrv",
+      "dkms.conf"
+    ],
+    "firmware": {
+      "source": "fw/aic8800D80",
+      "dest": "/usr/lib/firmware/aic8800D80"
+    },
+    "pacman_dependencies": ["dkms", "usb_modeswitch"],
+    "tested_kernels": ["7.2.11-arch1-1"],
+    "tested_date": "2026-10-24"
+  },
+  "modeswitch": {
+    "vid": "1111",
+    "pid": "1111",
+    "message": "555342438765432100000000000010fd0000000000000000000000000000f3",
+    "message2": "555342438765432100000000000010fd0000000000000000000000000000f2",
+    "targets": ["a69c:8d80", "a69c:8d83"],
+    "timeout_seconds": 25,
+    "require_storage_class": true,
+    "require_manufacturer": ["AIC", "AICSemi"],
+    "require_product": ["88M80"]
+  },
+  "persistence": {
+    "udev_rule": "99-antena-aic8800d80.rules",
+    "helper_script": "/usr/lib/antena/bin/antena-modeswitch-aic8800d80",
+    "modules_load": true
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["aic_load_fw", "aic8800_fdrv"]
+  },
+  "capabilities": {
+    "verified": ["scan_2ghz", "scan_5ghz", "monitor_mode", "passive_beacon_capture"],
+    "unverified": ["packet_injection"],
+    "driver_advertised": ["managed", "ap", "monitor", "mesh_point", "p2p"],
+    "note_key": "recipe.aic8800d80.capability_note"
+  },
+  "known_issues": [
+    {
+      "key": "recipe.aic8800d80.issue.reload",
+      "detail_key": "recipe.aic8800d80.issue.reload_detail"
+    }
+  ],
+  "sources": [
+    "https://github.com/olamellberg/AIC8800D80",
+    "https://github.com/shenmintao/aic8800d80",
+    "https://github.com/ronnyf/AIC8800-Linux-Driver"
+  ]
+}

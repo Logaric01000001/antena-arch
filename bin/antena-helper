@@ -1,0 +1,10 @@
+#!/bin/sh
+# Componente privilegiado. Solo se invoca mediante pkexec y con operaciones
+# cerradas; no acepta comandos arbitrarios.
+set -eu
+# pkexec puede conservar un cwd escribible por el usuario. Nunca se permite
+# que un módulo plantado allí se ejecute como root.
+cd /
+PYTHONPATH="/usr/lib/antena"
+export PYTHONPATH
+exec /usr/bin/python3 -P -m antena.priv.helper "$@"

@@ -1,0 +1,58 @@
+name: Bug report
+description: Algo no funciona con tu adaptador o con Antena
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por el reporte. No incluyas contraseñas Wi-Fi, SSID privados ni
+        capturas con datos personales. Para vulnerabilidades usa SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Versión de Antena
+      description: Salida de `antena --version`
+      placeholder: "Antena 0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Sistema y kernel
+      description: Distribución y `uname -r`
+      placeholder: "Arch Linux · 7.2.11-arch1-1"
+    validations:
+      required: true
+  - type: input
+    id: adapter
+    attributes:
+      label: Adaptador
+      description: Modelo y VID:PID (`lsusb`)
+      placeholder: "AX900 · 1111:1111 / a69c:8d83"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Qué ocurrió
+      description: Pasos, estado mostrado y resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnóstico
+      description: Adjunta `antena --diagnose --json --report /tmp/antena.json`
+      render: json
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: He revisado docs/TROUBLESHOOTING.md
+          required: true
+        - label: No he incluido contraseñas ni datos personales
+          required: true
+        - label: Indico si probé con hardware real o solo simulación
+          required: true

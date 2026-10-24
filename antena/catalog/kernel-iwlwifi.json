@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "id": "kernel-iwlwifi",
+  "name": "Intel Wi-Fi (iwlwifi)",
+  "vendor": "Intel",
+  "family": "iwlwifi",
+  "summary_key": "recipe.kernel_iwlwifi.summary",
+  "match": {
+    "drivers": ["iwlwifi"]
+  },
+  "usb_stages": {},
+  "driver": {
+    "kind": "kernel",
+    "package": "linux-firmware",
+    "modules": ["iwlwifi", "iwlmvm", "iwlwifi"],
+    "primary_module": "iwlwifi",
+    "license": "GPL-2.0-only",
+    "firmware": {
+      "source": null,
+      "dest": "/lib/firmware"
+    },
+    "pacman_dependencies": ["linux-firmware"],
+    "tested_kernels": [],
+    "tested_date": null
+  },
+  "verification": {
+    "interface_required": true,
+    "scan": true,
+    "allowed_modules": ["iwlwifi"]
+  },
+  "capabilities": {
+    "verified": [],
+    "unverified": ["scan_2ghz", "scan_5ghz", "monitor_mode"],
+    "driver_advertised": ["managed", "ap", "monitor", "p2p"],
+    "note_key": "recipe.kernel.note"
+  },
+  "sources": ["https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi"]
+}
