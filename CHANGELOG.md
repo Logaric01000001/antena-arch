@@ -33,6 +33,8 @@ Primera versión.
   monitor (opcional, requiere tcpdump).
 - Empaquetado Arch: `PKGBUILD`, `.desktop`, iconos propios, metadatos AppStream,
   `install.sh` y limpieza de desinstalación que no toca controladores ajenos.
+- Paquete AUR reproducible en `packaging/aur/` (`PKGBUILD`, `.SRCINFO`,
+  `.install`) construido desde el tarball del tag; pendiente de subida a AUR.
 - Suite de pruebas con sysfs simulado y runner falso (20 escenarios de diseño).
 
 ### Limitaciones conocidas

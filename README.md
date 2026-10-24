@@ -94,18 +94,25 @@ cd antena-arch
 ./install.sh
 ```
 
-> El repositorio está publicado en GitHub. El paquete AUR todavía no está
-> disponible; `packaging/PKGBUILD.aur` es una plantilla.
+> El repositorio está publicado en GitHub. El paquete AUR está preparado en
+> `packaging/aur/` y se construyó desde el tag, pero **todavía no se ha subido
+> a AUR**.
 
 El instalador **no** se ejecuta como root: construye con `makepkg` como tu
 usuario y luego llama a `sudo pacman -U`. `install.sh` comprueba `base-devel`,
 las dependencias y explica el comando exacto si falta algo.
 
-AUR (objetivo futuro, **no disponible todavía**):
+AUR (paquete preparado, **aún no publicado**):
 
 ```bash
+# Aún no funciona: el paquete no está subido a AUR.
 yay -S antena-arch
 ```
+
+Los archivos listos para el repositorio AUR están en `packaging/aur/`
+(`PKGBUILD`, `.SRCINFO`, `.install`), construidos y probados desde el tarball
+del tag. El procedimiento de subida está en
+[`docs/PACKAGING.md`](docs/PACKAGING.md).
 
 Desinstalación gestionada:
 
@@ -197,7 +204,7 @@ limitaciones más abajo.
 - Con Secure Boot activo, un módulo DKMS sin firma puede no cargar. Antena no
   desactiva Secure Boot ni modifica el firmware; el usuario debe enrolar la
   clave MOK según su distribución si decide usar ese controlador.
-- El paquete AUR no está publicado. `packaging/PKGBUILD.aur` es una plantilla.
+- El paquete AUR está preparado en `packaging/aur/`, pero no está publicado.
 
 ## Contribuir
 

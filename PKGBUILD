@@ -17,8 +17,8 @@ optdepends=(
 install=antena-arch.install
 options=(!strip)
 
-# Compilación local desde el repositorio clonado. Para publicar en AUR,
-# usa packaging/PKGBUILD.aur con la URL y el hash del tag definitivo.
+# Compilación local desde el repositorio clonado. El paquete listo para AUR
+# está en packaging/aur/PKGBUILD, con el tarball y el hash del tag publicado.
 source=()
 sha256sums=()
 

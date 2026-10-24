@@ -144,7 +144,8 @@ capturas reales. La lógica de presentación es fina y delega en `core`.
 ## Empaquetado
 
 - `PKGBUILD` raíz: construcción local desde el repositorio (`$startdir`).
-- `packaging/PKGBUILD.aur`: plantilla para el tag publicado; no está activa.
+- `packaging/aur/`: paquete AUR completo (`PKGBUILD`, `.SRCINFO`, `.install`)
+  con el tarball del tag y su SHA-256; preparado, no publicado.
 - Launchers en `/usr/bin/antena` y `/usr/lib/antena/antena-helper`.
 - Catálogo instalado en `/usr/share/antena/catalog`.
 - Iconos, `.desktop` y metainfo AppStream propios.
