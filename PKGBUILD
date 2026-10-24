@@ -1,10 +1,10 @@
-# Maintainer: Antena contributors <antena@example.invalid>
+# Maintainer: Log4ric <198108252+Logaric01000001@users.noreply.github.com>
 pkgname=antena-arch
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="Asistente gráfico para configurar adaptadores Wi-Fi USB en Arch Linux"
 arch=('any')
-url="https://github.com/USUARIO/antena-arch"
+url="https://github.com/Logaric01000001/antena-arch"
 license=('GPL-3.0-or-later')
 depends=('python' 'python-gobject' 'gtk4' 'libadwaita' 'networkmanager' 'polkit' 'usb_modeswitch' 'dkms' 'iw' 'pacman')
 optdepends=(

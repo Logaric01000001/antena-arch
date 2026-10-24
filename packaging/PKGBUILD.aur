@@ -1,16 +1,15 @@
-# Maintainer: Antena contributors <antena@example.invalid>
-# PLANTILLA para AUR. No se ha publicado nada.
+# Maintainer: Log4ric <198108252+Logaric01000001@users.noreply.github.com>
+# PLANTILLA para AUR. El paquete AUR todavía no está publicado.
 # Antes de enviarlo:
-#   1. Publica el repositorio y crea el tag v0.1.0.
-#   2. Sustituye USUARIO por el propietario real.
-#   3. Calcula sha256 del tarball del tag y sustituye SKIP.
-#   4. Verifica con `makepkg -f` y `namcap`.
+#   1. Crea el tag v0.1.0 en GitHub.
+#   2. Calcula sha256 del tarball del tag y sustituye SKIP.
+#   3. Verifica con `makepkg -f` y `namcap`.
 pkgname=antena-arch
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="Asistente gráfico para configurar adaptadores Wi-Fi USB en Arch Linux"
 arch=('any')
-url="https://github.com/USUARIO/antena-arch"
+url="https://github.com/Logaric01000001/antena-arch"
 license=('GPL-3.0-or-later')
 depends=('python' 'python-gobject' 'gtk4' 'libadwaita' 'networkmanager' 'polkit' 'usb_modeswitch' 'dkms' 'iw' 'pacman')
 optdepends=(

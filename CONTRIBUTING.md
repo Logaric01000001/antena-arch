@@ -14,7 +14,7 @@ verificada** antes que una lista larga de modelos.
 ## Entorno de desarrollo
 
 ```bash
-git clone https://github.com/USUARIO/antena-arch
+git clone https://github.com/Logaric01000001/antena-arch
 cd antena-arch
 python -m venv .venv --system-site-packages
 .venv/bin/pip install pytest

@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentación
-    url: https://github.com/USUARIO/antena-arch/tree/main/docs
+    url: https://github.com/Logaric01000001/antena-arch/tree/main/docs
     about: Arquitectura, drivers, añadir dispositivos y solución de problemas
   - name: Seguridad
-    url: https://github.com/USUARIO/antena-arch/blob/main/SECURITY.md
+    url: https://github.com/Logaric01000001/antena-arch/blob/main/SECURITY.md
     about: Reporta vulnerabilidades de forma privada; no abras un issue público

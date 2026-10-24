@@ -1,5 +1,7 @@
 # Antena
 
+[![CI](https://github.com/Logaric01000001/antena-arch/actions/workflows/ci.yml/badge.svg)](https://github.com/Logaric01000001/antena-arch/actions/workflows/ci.yml)
+
 **Configurar un adaptador Wi-Fi USB problemático en Arch Linux debería ser una
 decisión, no una investigación.**
 
@@ -87,13 +89,13 @@ dependencias del paquete (`gtk4`, `libadwaita`, `python-gobject`,
 `networkmanager`, `polkit`, `usb_modeswitch`, `dkms`, `iw`).
 
 ```bash
-git clone https://github.com/USUARIO/antena-arch
+git clone https://github.com/Logaric01000001/antena-arch
 cd antena-arch
 ./install.sh
 ```
 
-> `USUARIO` es un marcador deliberado. Sustitúyelo por la URL real cuando el
-> repositorio esté publicado. No se ha publicado nada en AUR.
+> El repositorio está publicado en GitHub. El paquete AUR todavía no está
+> disponible; `packaging/PKGBUILD.aur` es una plantilla.
 
 El instalador **no** se ejecuta como root: construye con `makepkg` como tu
 usuario y luego llama a `sudo pacman -U`. `install.sh` comprueba `base-devel`,
@@ -196,7 +198,6 @@ limitaciones más abajo.
   desactiva Secure Boot ni modifica el firmware; el usuario debe enrolar la
   clave MOK según su distribución si decide usar ese controlador.
 - El paquete AUR no está publicado. `packaging/PKGBUILD.aur` es una plantilla.
-- La URL del repositorio y el metadato `url` son marcadores hasta publicar.
 
 ## Contribuir
 

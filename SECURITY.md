@@ -54,13 +54,15 @@ límites de confianza son:
 
 ## Reportar una vulnerabilidad
 
-No uses issues públicos. Envía un correo a:
+No uses issues públicos. Utiliza el reporte privado de vulnerabilidades de
+GitHub:
 
-```
-seguridad@antena.invalid
-```
+https://github.com/Logaric01000001/antena-arch/security/advisories/new
 
-Sustituye esta dirección por una real antes de publicar el repositorio. Incluye:
+Si el formulario no está disponible, contacta con `@Logaric01000001` a través
+de GitHub sin publicar detalles explotables.
+
+Incluye:
 
 - versión de Antena y de Arch;
 - descripción del impacto;

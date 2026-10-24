@@ -9,8 +9,7 @@ APP_ID = "io.github.antena.Antena"
 APP_NAME = "Antena"
 VERSION = "0.1.0"
 
-# Marcador deliberado: sustituir por la URL real antes de publicar.
-PROJECT_URL = "https://github.com/USUARIO/antena-arch"
+PROJECT_URL = "https://github.com/Logaric01000001/antena-arch"
 LICENSE_NAME = "GPL-3.0-or-later"
 
 # Rutas de instalación del paquete.
