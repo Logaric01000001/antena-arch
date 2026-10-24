@@ -102,6 +102,20 @@ El instalador **no** se ejecuta como root: construye con `makepkg` como tu
 usuario y luego llama a `sudo pacman -U`. `install.sh` comprueba `base-devel`,
 las dependencias y explica el comando exacto si falta algo.
 
+### Sin AUR: paquete binario de la release
+
+También puedes instalar el paquete ya construido, sin clonar ni compilar:
+
+```bash
+curl -fLO https://github.com/Logaric01000001/antena-arch/releases/download/v0.1.0/antena-arch-0.1.0-1-any.pkg.tar.zst
+echo "9ee21b7a81e04928a0277ad83a7aae2d3120f6b8dfd221bf09f67a294f1b23b4  antena-arch-0.1.0-1-any.pkg.tar.zst" | sha256sum -c -
+sudo pacman -U antena-arch-0.1.0-1-any.pkg.tar.zst
+```
+
+El paquete de la release **no está firmado**. Verifica siempre el SHA-256 o
+compílalo localmente. Las actualizaciones se instalan descargando el paquete de
+la release nueva; `pacman` no buscará versiones nuevas sin un repositorio.
+
 AUR (paquete preparado, **aún no publicado**):
 
 ```bash
