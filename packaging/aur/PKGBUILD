@@ -1,6 +1,6 @@
 # Maintainer: Log4ric <198108252+Logaric01000001@users.noreply.github.com>
 pkgname=antena-arch
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="Asistente gráfico para configurar adaptadores Wi-Fi USB en Arch Linux"
 arch=('any')

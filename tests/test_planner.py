@@ -42,7 +42,9 @@ def test_repeat_install_is_idempotent(env, monkeypatch, tmp_path):
     assert "local:verify_ready" in ops
 
 
-def test_setup_plan_isolated_to_selected_adapter(env):
+def test_setup_plan_isolated_to_selected_adapter(env, monkeypatch):
+    monkeypatch.setattr(planner, "load_state", lambda: {"version": 1, "files": {}, "driver": None})
+    monkeypatch.setattr(planner, "files_for", lambda state, owner: [])
     env.add_internal()
     env.add_aic(storage=True)
     result = detect(env)
@@ -53,6 +55,13 @@ def test_setup_plan_isolated_to_selected_adapter(env):
     assert "wlan1" in payload_text or "1-1" in payload_text
     assert any(stage.op == "priv:switch_mode" for stage in plan.stages)
     assert not any("wlan0" in str(value) for stage in plan.stages for value in stage.payload.values())
+    # La persistencia se planifica desde el modo almacenamiento, pero se
+    # ejecuta después del cambio de modo y de verificar la interfaz.
+    ops = [stage.op for stage in plan.stages]
+    assert "priv:install_persistence" in ops
+    assert ops.index("priv:switch_mode") < ops.index("priv:install_persistence")
+    assert ops.index("local:verify_interface") < ops.index("priv:install_persistence")
+    assert ops[-1] == "local:verify_ready"
 
 
 def test_ready_device_check_plan_is_read_only(env):

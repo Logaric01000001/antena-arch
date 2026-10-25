@@ -2,6 +2,17 @@
 
 Todas las fechas usan UTC.
 
+## [0.1.1] — 2026-10-24
+
+### Corregido
+
+- La persistencia udev se planifica también cuando el adaptador empieza en
+  modo almacenamiento. Antes solo se incluía si ya estaba operativo, por lo
+  que la primera configuración no la instalaba y el cambio de modo se perdía
+  al reconectar.
+- Prueba de regresión que exige que la persistencia se ejecute después de
+  cambiar el modo, cargar el driver y verificar la interfaz.
+
 ## [0.1.0] — 2026-10-24
 
 Primera versión.

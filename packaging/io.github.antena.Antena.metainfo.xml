@@ -34,6 +34,12 @@
   </categories>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.1.1" date="2026-10-24">
+      <description>
+        <p>Install the udev persistence during the first setup, even when the adapter starts in USB storage mode.</p>
+        <p xml:lang="es">Instala la persistencia udev durante la primera configuración, incluso si el adaptador empieza en modo almacenamiento USB.</p>
+      </description>
+    </release>
     <release version="0.1.0" date="2026-10-24">
       <description>
         <p>First release: AIC8800D80 support and universal read-only detection.</p>

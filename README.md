@@ -10,7 +10,7 @@ un plan de instalación con pasos reales y verificados. La interfaz se ejecuta
 sin privilegios; solo un componente pequeño y auditable solicita autorización
 a través de polkit.
 
-> Estado: **0.1.0**, primera versión pública. Una receta de controlador está
+> Estado: **0.1.1**, corrección de persistencia USB. Una receta de controlador está
 > verificada con hardware real: **AIC8800D80 (AX900 Wi-Fi 6 USB)**. Varios
 > controladores nativos del kernel se detectan y diagnostican, pero no se han
 > probado físicamente con Antena. Todo lo demás se muestra como no compatible,
@@ -107,9 +107,9 @@ las dependencias y explica el comando exacto si falta algo.
 También puedes instalar el paquete ya construido, sin clonar ni compilar:
 
 ```bash
-curl -fLO https://github.com/Logaric01000001/antena-arch/releases/download/v0.1.0/antena-arch-0.1.0-1-any.pkg.tar.zst
-echo "9ee21b7a81e04928a0277ad83a7aae2d3120f6b8dfd221bf09f67a294f1b23b4  antena-arch-0.1.0-1-any.pkg.tar.zst" | sha256sum -c -
-sudo pacman -U antena-arch-0.1.0-1-any.pkg.tar.zst
+curl -fLO https://github.com/Logaric01000001/antena-arch/releases/download/v0.1.1/antena-arch-0.1.1-1-any.pkg.tar.zst
+echo "44e18830f340c5ce59afb1747c1c004015ac31811a8bad17f7364b69ee7f62fe  antena-arch-0.1.1-1-any.pkg.tar.zst" | sha256sum -c -
+sudo pacman -U antena-arch-0.1.1-1-any.pkg.tar.zst
 ```
 
 El paquete de la release **no está firmado**. Verifica siempre el SHA-256 o
@@ -203,7 +203,7 @@ ni la prueba de modo monitor para no alterar un adaptador que ya funcionaba.
 Ver [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md) y el estado de
 limitaciones más abajo.
 
-## Limitaciones conocidas (0.1.0)
+## Limitaciones conocidas (0.1.1)
 
 - Solo el AIC8800D80 tiene una receta de instalación **verificada con hardware**.
 - La ruta de instalación DKMS con hash está implementada y probada con

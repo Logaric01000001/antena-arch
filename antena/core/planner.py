@@ -122,11 +122,10 @@ def build_setup_plan(
     )
     if recipe.verification.get("scan", False):
         plan.stages.append(PlanStage(key="stage.scan", op="local:scan", payload={}))
-    if (
-        recipe.persistence
-        and device.usb_stage is UsbStage.OPERATIONAL
-        and not persistence_installed(recipe.id)
-    ):
+    # Se planifica aunque el dispositivo empiece en almacenamiento: la etapa
+    # se ejecuta al final, cuando el modo ya cambió y existe interfaz. El
+    # helper vuelve a verificar el estado operativo antes de escribir nada.
+    if recipe.persistence and not persistence_installed(recipe.id):
         plan.stages.append(
             PlanStage(
                 key="stage.persistence",

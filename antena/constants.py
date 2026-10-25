@@ -7,7 +7,7 @@ from pathlib import Path
 
 APP_ID = "io.github.antena.Antena"
 APP_NAME = "Antena"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 PROJECT_URL = "https://github.com/Logaric01000001/antena-arch"
 LICENSE_NAME = "GPL-3.0-or-later"
