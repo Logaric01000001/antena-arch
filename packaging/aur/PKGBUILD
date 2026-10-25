@@ -19,7 +19,7 @@ options=(!strip)
 
 # El paquete AUR se construye desde el tarball inmutable del tag publicado.
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('5361194034cce5c61c3ddb2f8b5d526584c2e9d144b7c4659b692150c35b2e80')
+sha256sums=('05e29b8da521a5515ec7d9527ad7690c2d1f2420b811f565950af346b7f7c8fb')
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"

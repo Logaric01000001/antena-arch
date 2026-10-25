@@ -108,7 +108,8 @@ También puedes instalar el paquete ya construido, sin clonar ni compilar:
 
 ```bash
 curl -fLO https://github.com/Logaric01000001/antena-arch/releases/download/v0.1.1/antena-arch-0.1.1-1-any.pkg.tar.zst
-echo "44e18830f340c5ce59afb1747c1c004015ac31811a8bad17f7364b69ee7f62fe  antena-arch-0.1.1-1-any.pkg.tar.zst" | sha256sum -c -
+sha256sum antena-arch-0.1.1-1-any.pkg.tar.zst
+# Compara el resultado con el SHA-256 publicado en la página de la release.
 sudo pacman -U antena-arch-0.1.1-1-any.pkg.tar.zst
 ```
 

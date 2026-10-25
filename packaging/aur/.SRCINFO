@@ -1,6 +1,6 @@
 pkgbase = antena-arch
 	pkgdesc = Asistente gráfico para configurar adaptadores Wi-Fi USB en Arch Linux
-	pkgver = 0.1.0
+	pkgver = 0.1.1
 	pkgrel = 1
 	url = https://github.com/Logaric01000001/antena-arch
 	install = antena-arch.install
@@ -22,7 +22,7 @@ pkgbase = antena-arch
 	optdepends = linux-cachyos-headers: encabezados para el kernel CachyOS
 	optdepends = tcpdump: prueba pasiva de recepción en modo monitor
 	options = !strip
-	source = antena-arch-0.1.0.tar.gz::https://github.com/Logaric01000001/antena-arch/archive/refs/tags/v0.1.0.tar.gz
-	sha256sums = 5361194034cce5c61c3ddb2f8b5d526584c2e9d144b7c4659b692150c35b2e80
+	source = antena-arch-0.1.1.tar.gz::https://github.com/Logaric01000001/antena-arch/archive/refs/tags/v0.1.1.tar.gz
+	sha256sums = 05e29b8da521a5515ec7d9527ad7690c2d1f2420b811f565950af346b7f7c8fb
 
 pkgname = antena-arch

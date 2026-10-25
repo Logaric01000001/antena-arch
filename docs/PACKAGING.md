@@ -7,7 +7,7 @@ Antena tiene tres formatos de instalación:
 | Formato | Ruta | Estado |
 |---|---|---|
 | Build local desde el repositorio | `PKGBUILD` | Verificado con `makepkg` |
-| Paquete binario `any` | release `v0.1.0` | Publicado, sin firma |
+| Paquete binario `any` | release `v0.1.1` | Publicado, sin firma |
 | Paquete AUR | `packaging/aur/` | **Preparado y probado; pendiente de subir a AUR** |
 
 El paquete AUR **no está publicado**. `yay -S antena-arch` no funcionará hasta
@@ -18,7 +18,7 @@ que se suba con una cuenta de AUR. No se debe afirmar lo contrario.
 ```bash
 cd antena-arch
 makepkg -f
-sudo pacman -U antena-arch-0.1.0-1-any.pkg.tar.zst
+sudo pacman -U antena-arch-0.1.1-1-any.pkg.tar.zst
 ```
 
 `install.sh` automatiza lo mismo sin ejecutar `makepkg` como root.
@@ -37,13 +37,13 @@ antena-arch.install
 El `PKGBUILD` usa el tarball inmutable del tag publicado:
 
 ```
-https://github.com/Logaric01000001/antena-arch/archive/refs/tags/v0.1.0.tar.gz
+https://github.com/Logaric01000001/antena-arch/archive/refs/tags/v0.1.1.tar.gz
 ```
 
 SHA-256:
 
 ```
-5361194034cce5c61c3ddb2f8b5d526584c2e9d144b7c4659b692150c35b2e80
+05e29b8da521a5515ec7d9527ad7690c2d1f2420b811f565950af346b7f7c8fb
 ```
 
 Build reproducible comprobado desde un directorio limpio:
@@ -57,8 +57,8 @@ makepkg -f
 El paquete resultante se puede inspeccionar con:
 
 ```bash
-pacman -Qip antena-arch-0.1.0-1-any.pkg.tar.zst
-bsdtar -tf antena-arch-0.1.0-1-any.pkg.tar.zst
+pacman -Qip antena-arch-0.1.1-1-any.pkg.tar.zst
+bsdtar -tf antena-arch-0.1.1-1-any.pkg.tar.zst
 ```
 
 ## Publicar en AUR
@@ -83,7 +83,7 @@ cp packaging/aur/PKGBUILD \
 # 5. Publica
 cd ~/aur-antena
 git add PKGBUILD .SRCINFO antena-arch.install
-git commit -m "Initial upload: antena-arch 0.1.0-1"
+git commit -m "Initial upload: antena-arch 0.1.1-1"
 git push
 ```
 
